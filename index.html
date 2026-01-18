@@ -9,131 +9,599 @@
     <meta name="description" content="Quality mosquito nets for windows and doors in Mysuru. Durable, custom-fitted screens for homes and offices. Contact Raj Marketing Mysore.">
     <meta name="keywords" content="mosquito nets mysore, window mosquito screen, door mosquito net, raj marketing mysore, mesh screens, insect screens">
     <meta name="author" content="Raj Marketing Mysore">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; color: #222; }
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #1976d2;
+            --accent-color: #25d366;
+            --light-color: #f8f9fa;
+            --dark-color: #222;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f4f4f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #0d47a1, #1976d2);
-            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 15px 40px;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
         }
-        header h1 { margin: 0; font-size: 28px; }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .company-name h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .company-name p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin: 0;
+        }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
         nav a {
-            color: white; margin-left: 20px; text-decoration: none;
-            font-weight: bold; font-size: 16px;
+            color: white;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #ffeb3b;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffeb3b;
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
         }
 
         /* Sliding Banner */
         .slider {
             position: relative;
             width: 100%;
-            height: 480px;
+            height: 500px;
             overflow: hidden;
+            border-radius: 0 0 10px 10px;
         }
+        
         .slides {
             display: flex;
             width: 300%;
             height: 100%;
-            animation: slide 12s infinite;
+            animation: slide 15s infinite;
         }
+        
         .slides img {
             width: 100%;
-            height: 480px;
+            height: 100%;
             object-fit: cover;
         }
+        
         @keyframes slide {
             0% { transform: translateX(0%); }
+            30% { transform: translateX(0%); }
             33% { transform: translateX(-100%); }
+            63% { transform: translateX(-100%); }
             66% { transform: translateX(-200%); }
+            97% { transform: translateX(-200%); }
             100% { transform: translateX(0%); }
+        }
+        
+        .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+        }
+        
+        .slider-overlay h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .slider-overlay p {
+            font-size: 18px;
+            max-width: 600px;
         }
 
         /* Section Titles */
-        .section { padding: 50px 40px; text-align: center; }
-        .section h2 { font-size: 32px; margin-bottom: 15px; }
+        .section {
+            padding: 70px 40px;
+            text-align: center;
+        }
+        
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .section-description {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 25px auto 40px;
+            color: #555;
+        }
 
         /* Services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             padding: 20px 0;
         }
+        
         .service-card {
             background: white;
-            padding: 20px;
+            padding: 30px 25px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: left;
+            height: 100%;
         }
-        .service-card h3 { margin-top: 0; color: #0d47a1; }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #555;
+            font-size: 16px;
+        }
 
         /* Product Images */
         .product-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
-        .product-gallery img {
-            width: 100%;
+        
+        .product-item {
+            position: relative;
             border-radius: 10px;
-            height: 240px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+            transition: var(--transition);
+        }
+        
+        .product-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .product-item img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            transition: var(--transition);
+        }
+        
+        .product-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .product-item:hover .product-overlay {
+            transform: translateY(0);
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
 
         /* Contact Box */
         .contact-box {
             background: white;
-            padding: 30px;
+            padding: 40px;
             margin: 40px auto;
             width: 90%;
-            max-width: 700px;
+            max-width: 800px;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .contact-details {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            width: 20px;
+        }
+        
+        .map-container {
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+        }
+        
+        .map-placeholder i {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
 
         /* Kannada Section */
         .kn-box {
-            background: #fff3cd;
-            padding: 30px;
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 40px;
             border-left: 6px solid #ffca28;
             margin: 50px auto;
             width: 90%;
-            max-width: 900px;
+            max-width: 1000px;
             border-radius: 10px;
+            box-shadow: var(--shadow);
         }
-        .kn-box h2 { color: #d48806; }
+        
+        .kn-box h2 {
+            color: #d48806;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+        
+        .kn-box p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
 
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            width: 55px;
-            height: 55px;
+            bottom: 25px;
+            right: 25px;
+            background: var(--accent-color);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 100;
         }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
         .whatsapp-float img {
             width: 32px;
         }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
 
         footer {
-            background: #0d47a1;
+            background: linear-gradient(135deg, var(--primary-color), #0b3d8a);
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 30px 0;
             margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: #ffeb3b;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+            
+            .slider-overlay h2 {
+                font-size: 28px;
+            }
+            
+            .slider-overlay p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            nav a {
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .section {
+                padding: 50px 20px;
+            }
+            
+            .slider {
+                height: 400px;
+            }
+            
+            .slider-overlay {
+                padding: 15px;
+            }
+            
+            .slider-overlay h2 {
+                font-size: 24px;
+            }
+            
+            .slider-overlay p {
+                font-size: 14px;
+            }
+            
+            .services-grid, .product-gallery, .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-box, .kn-box {
+                padding: 25px;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .company-name h1 {
+                font-size: 20px;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .slider {
+                height: 300px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
         }
     </style>
 </head>
@@ -141,46 +609,132 @@
 <body>
 
 <header>
-    <h1>QUALITY MOSQUITO SCREEN</h1>
-    <nav>
-        <a href="#">Home</a>
+    <div class="logo-container">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="company-name">
+            <h1>QUALITY MOSQUITO SCREEN</h1>
+            <p>Raj Marketing Mysore</p>
+        </div>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav">
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#products">Products</a>
+        <a href="#features">Features</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <!-- SLIDING BANNER -->
-<div class="slider">
+<div class="slider" id="home">
     <div class="slides">
-        <img src="https://images.unsplash.com/photo-1560185127-6680cb57510f?auto=format&fit=crop&w=1400&q=80">
-        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80">
-        <img src="https://images.unsplash.com/photo-1600585154409-5e77f2145a3f?auto=format&fit=crop&w=1400&q=80">
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1560185127-6680cb57510f?auto=format&fit=crop&w=1400&q=80" alt="Mosquito screen installation">
+            <div class="slider-overlay">
+                <h2>Premium Mosquito Protection</h2>
+                <p>Custom-fitted mosquito screens for windows and doors in Mysuru</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80" alt="Quality mosquito net">
+            <div class="slider-overlay">
+                <h2>Durable & Rust-Proof Materials</h2>
+                <p>High-quality screens designed to last for years with minimal maintenance</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1600585154409-5e77f2145a3f?auto=format&fit=crop&w=1400&q=80" alt="Modern home with mosquito screens">
+            <div class="slider-overlay">
+                <h2>Free Site Visit & Measurement</h2>
+                <p>Professional installation with custom sizing for your home or office</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- SERVICES -->
 <div class="section" id="services">
     <h2>Our Services</h2>
+    <p class="section-description">We provide comprehensive mosquito screen solutions for residential and commercial properties in Mysuru and surrounding areas.</p>
+    
     <div class="services-grid">
         <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-window-maximize"></i>
+            </div>
             <h3>Window Mosquito Nets</h3>
-            High-durability, rust-proof, custom-fitted window screens.
+            <p>High-durability, rust-proof, custom-fitted window screens with fine mesh to keep even the smallest insects out while allowing fresh air to circulate.</p>
         </div>
 
         <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-door-open"></i>
+            </div>
             <h3>Door Mosquito Nets</h3>
-            Strong, premium-quality door mesh systems with smooth operation.
+            <p>Strong, premium-quality door mesh systems with smooth operation. Available in sliding, hinged, and magnetic options for easy access.</p>
         </div>
 
         <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-sliders-h"></i>
+            </div>
             <h3>Sliding Net Systems</h3>
-            Modern sliding mosquito net frames for easy usage.
+            <p>Modern sliding mosquito net frames for easy usage. Perfect for balconies, French doors, and large openings with space-saving design.</p>
         </div>
 
         <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-tools"></i>
+            </div>
             <h3>Repair & Replacement</h3>
-            Mesh replacement, frame repairs, and full maintenance service.
+            <p>Mesh replacement, frame repairs, and full maintenance service. We also upgrade old mosquito nets with new, more durable materials.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section features" id="features">
+    <h2>Why Choose Us</h2>
+    <p class="section-description">We are committed to providing the best mosquito screen solutions with quality materials and professional service.</p>
+    
+    <div class="features-grid">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-medal"></i>
+            </div>
+            <h3>Premium Quality</h3>
+            <p>We use only high-grade materials that are rust-proof and durable.</p>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-ruler-combined"></i>
+            </div>
+            <h3>Custom Sizing</h3>
+            <p>Perfect fit for any window or door with precise measurements.</p>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3>Quick Installation</h3>
+            <p>Professional installation completed in minimal time with no mess.</p>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3>Warranty</h3>
+            <p>All our products come with a comprehensive warranty for peace of mind.</p>
         </div>
     </div>
 </div>
@@ -188,11 +742,37 @@
 <!-- PRODUCT IMAGES -->
 <div class="section" id="products">
     <h2>Product Gallery</h2>
+    <p class="section-description">Browse our range of mosquito screen products for different applications and preferences.</p>
+    
     <div class="product-gallery">
-        <img src="https://images.unsplash.com/photo-1598928506311-c55dedf69f01?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1600585154154-65e1a39f0a46?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80">
+        <div class="product-item">
+            <img src="https://images.unsplash.com/photo-1598928506311-c55dedf69f01?auto=format&fit=crop&w=800&q=80" alt="Window mosquito screen">
+            <div class="product-overlay">
+                <h3>Window Screens</h3>
+                <p>Custom-fitted for any window type</p>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="https://images.unsplash.com/photo-1600585154154-65e1a39f0a46?auto=format&fit=crop&w=800&q=80" alt="Door mosquito net">
+            <div class="product-overlay">
+                <h3>Door Screens</h3>
+                <p>Durable nets for main and balcony doors</p>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Sliding mosquito screen">
+            <div class="product-overlay">
+                <h3>Sliding Systems</h3>
+                <p>Space-saving sliding screen solutions</p>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Professional installation">
+            <div class="product-overlay">
+                <h3>Professional Installation</h3>
+                <p>Expert fitting by our trained technicians</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -207,27 +787,118 @@
     <p>
         ವಿಂಡೋ ನೆಟ್, ಡೋರ್ ನೆಟ್, ಸ್ಲೈಡಿಂಗ್ ನೆಟ್, ರಿಪೇರಿ – ಎಲ್ಲಾ ಸೇವೆಗಳು ಲಭ್ಯ.
     </p>
+    <p>
+        ಉಚಿತ ಸೈಟ್ ಭೇಟಿ ಮತ್ತು ಅಳತೆ. ಮೈಸೂರು ಮತ್ತು ಸುತ್ತಮುತ್ತಲಿನ ಪ್ರದೇಶಗಳಲ್ಲಿ ಸೇವೆ ಲಭ್ಯ.
+    </p>
 </div>
 
 <!-- CONTACT -->
 <div class="contact-box" id="contact">
-    <h2>Contact Us</h2>
-    <p>
-        Ground Floor, 238, 8th Cross Road,  
-        M-Block, Kuvempu Nagara, Mysuru – 570023  
-        <br><br>
-        Phone: <strong>095918 28835</strong>
-    </p>
+    <div class="contact-info">
+        <h3>Contact Us</h3>
+        <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Ground Floor, 238, 8th Cross Road, M-Block, Kuvempu Nagara, Mysuru – 570023</p>
+            <p><i class="fas fa-phone"></i> <strong>095918 28835</strong></p>
+            <p><i class="fas fa-clock"></i> Monday - Saturday: 9:00 AM - 7:00 PM</p>
+            <p><i class="fas fa-envelope"></i> info@rajmarketingmysore.com</p>
+        </div>
+        <div class="social-links">
+            <p>Follow us:</p>
+            <p>
+                <a href="#" style="color: var(--primary-color); margin-right: 15px;"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" style="color: var(--primary-color); margin-right: 15px;"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" style="color: var(--primary-color);"><i class="fab fa-twitter fa-lg"></i></a>
+            </p>
+        </div>
+    </div>
+    <div class="map-container">
+        <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>Mysuru Location</p>
+            <small>Ground Floor, 238, 8th Cross Road</small>
+            <small>Kuvempu Nagara, Mysuru</small>
+        </div>
+    </div>
 </div>
 
 <!-- FLOATING WHATSAPP -->
 <a class="whatsapp-float" href="https://wa.me/919591828835" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
 </a>
 
 <footer>
-    © 2026 Raj Marketing Mysore – Quality Mosquito Screens
-</footer>
+    <div class="footer-content">
+        <h3>Raj Marketing Mysore</h3>
+        <p>Your trusted partner for quality mosquito screens in Mysuru</p>
+        
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+        <div class="copyright">
+            © 2026 Raj Marketing Mysore – Quality Mosquito Screens | All Rights Reserved
+        </div>
+    </div>
+    </footer>
+    
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = mobileMenuBtn.querySelector('i');
+        if (mainNav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after clicking a link
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    });
+    
+    // Add current year to footer
+    document.addEventListener('DOMContentLoaded', function() {
+        const yearSpan = document.getElementById('currentYear');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    });
+</script>
 
 </body>
 </html>
+```
