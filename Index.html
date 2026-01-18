@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quality Mosquito Screen – Raj Marketing Mysore</title>
+    <title>Quality Mosquito Screen | Raj Marketing Mysore</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Quality mosquito nets for windows and doors in Mysuru. Durable, custom-fitted screens for homes and offices. Contact Raj Marketing Mysore.">
+    <meta name="keywords" content="mosquito nets mysore, window mosquito screen, door mosquito net, raj marketing mysore, mesh screens, insect screens">
+    <meta name="author" content="Raj Marketing Mysore">
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #222;
-        }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; color: #222; }
 
         /* Header */
         header {
@@ -22,75 +22,69 @@
             justify-content: space-between;
             align-items: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
+        header h1 { margin: 0; font-size: 28px; }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
+            color: white; margin-left: 20px; text-decoration: none;
+            font-weight: bold; font-size: 16px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1560185127-6680cb57510f?auto=format&fit=crop&w=1400&q=80')
-                center/cover no-repeat;
-            height: 500px;
+        /* Sliding Banner */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+        }
+        .slides {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: 300%;
+            height: 100%;
+            animation: slide 12s infinite;
         }
-        .hero-box {
-            background: rgba(0,0,0,0.55);
-            padding: 40px 60px;
-            border-radius: 10px;
+        .slides img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
         }
-        .hero-box h2 {
-            color: white;
-            font-size: 42px;
-            margin: 0 0 20px;
-        }
-        .hero-box p {
-            color: #eee;
-            font-size: 20px;
-            margin-bottom: 25px;
-        }
-        .cta-btn {
-            background: #ffca28;
-            color: #222;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .cta-btn:hover {
-            background: #ffb300;
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0%); }
         }
 
-        /* About Section */
-        .section {
-            padding: 60px 40px;
-            text-align: center;
+        /* Section Titles */
+        .section { padding: 50px 40px; text-align: center; }
+        .section h2 { font-size: 32px; margin-bottom: 15px; }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
         }
-        .section h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
+        .service-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        .section p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.7;
+        .service-card h3 { margin-top: 0; color: #0d47a1; }
+
+        /* Product Images */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            height: 240px;
+            object-fit: cover;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
         }
 
         /* Contact Box */
@@ -101,86 +95,139 @@
             width: 90%;
             max-width: 700px;
             border-radius: 10px;
-            box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
-        }
-        .contact-box h4 {
-            margin-top: 0;
-            font-size: 26px;
-            color: #0d47a1;
-        }
-        .contact-box p {
-            font-size: 18px;
-            line-height: 1.6;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
-        /* Footer */
+        /* Kannada Section */
+        .kn-box {
+            background: #fff3cd;
+            padding: 30px;
+            border-left: 6px solid #ffca28;
+            margin: 50px auto;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+        .kn-box h2 { color: #d48806; }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .whatsapp-float img {
+            width: 32px;
+        }
+
         footer {
             background: #0d47a1;
             color: white;
             text-align: center;
             padding: 15px 0;
             margin-top: 40px;
-            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>QUALITY MOSQUITO SCREEN</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+<header>
+    <h1>QUALITY MOSQUITO SCREEN</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <!-- Hero Banner -->
-    <div class="hero">
-        <div class="hero-box">
-            <h2>Mosquito Nets for Windows & Doors</h2>
-            <p>Durable, long-lasting, and custom-fitted mosquito screens for every home.</p>
-            <button class="cta-btn" onclick="contactNow()">Contact Now</button>
+<!-- SLIDING BANNER -->
+<div class="slider">
+    <div class="slides">
+        <img src="https://images.unsplash.com/photo-1560185127-6680cb57510f?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1600585154409-5e77f2145a3f?auto=format&fit=crop&w=1400&q=80">
+    </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Window Mosquito Nets</h3>
+            High-durability, rust-proof, custom-fitted window screens.
+        </div>
+
+        <div class="service-card">
+            <h3>Door Mosquito Nets</h3>
+            Strong, premium-quality door mesh systems with smooth operation.
+        </div>
+
+        <div class="service-card">
+            <h3>Sliding Net Systems</h3>
+            Modern sliding mosquito net frames for easy usage.
+        </div>
+
+        <div class="service-card">
+            <h3>Repair & Replacement</h3>
+            Mesh replacement, frame repairs, and full maintenance service.
         </div>
     </div>
+</div>
 
-    <!-- About -->
-    <div class="section">
-        <h3>Why Choose Our Mosquito Screens?</h3>
-        <p>
-            Our high-quality mosquito nets offer long-lasting protection from mosquitoes, insects, and dust
-            while allowing fresh air and natural light into your home. Built with strong, rust-proof materials,
-            our screens are designed to handle daily use and Indian weather conditions.  
-            Perfect for windows and doors of any size.
-        </p>
+<!-- PRODUCT IMAGES -->
+<div class="section" id="products">
+    <h2>Product Gallery</h2>
+    <div class="product-gallery">
+        <img src="https://images.unsplash.com/photo-1598928506311-c55dedf69f01?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1600585154154-65e1a39f0a46?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80">
     </div>
+</div>
 
-    <!-- Contact Information -->
-    <div class="contact-box">
-        <h4>Our Office Address</h4>
-        <p>
-            Ground Floor, 238, 8th Cross Road,  
-            M-Block, Kuvempu Nagara,  
-            Mysuru, Karnataka 570023  
-            <br><br>
-            Phone: <strong>095918 28835</strong>
-        </p>
-    </div>
+<!-- KANNADA VERSION -->
+<div class="kn-box">
+    <h2>ಕನ್ನಡದಲ್ಲಿ ಸೇವೆಗಳು</h2>
+    <p>
+        ನಮ್ಮ ಮಶ್‌ಕೀಟೋ ನೆಟ್‌ಗಳು ಬಲಿಷ್ಠ, ಗುಣಮಟ್ಟದ ಮತ್ತು ದೀರ್ಘಕಾಲ टिक्कುವಂತೆ  
+        ನಿರ್ಮಾಣಗೊಂಡಿವೆ. ಮನೆ, ಫ್ಲ್ಯಾಟ್, ಕಚೇರಿ ಎಲ್ಲೆಲ್ಲಿಗೂ ಕಸ್ಟಮ್ ಸೈಜ್‌ನಲ್ಲಿ  
+        ಸ್ಕ್ರೀನ್ ಫಿಟ್ ಮಾಡಿ ಕೊಡಲಾಗುತ್ತದೆ.  
+    </p>
+    <p>
+        ವಿಂಡೋ ನೆಟ್, ಡೋರ್ ನೆಟ್, ಸ್ಲೈಡಿಂಗ್ ನೆಟ್, ರಿಪೇರಿ – ಎಲ್ಲಾ ಸೇವೆಗಳು ಲಭ್ಯ.
+    </p>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        © 2026 Raj Marketing Mysore – Quality Mosquito Screens
-    </footer>
+<!-- CONTACT -->
+<div class="contact-box" id="contact">
+    <h2>Contact Us</h2>
+    <p>
+        Ground Floor, 238, 8th Cross Road,  
+        M-Block, Kuvempu Nagara, Mysuru – 570023  
+        <br><br>
+        Phone: <strong>095918 28835</strong>
+    </p>
+</div>
 
-    <!-- JavaScript -->
-    <script>
-        function contactNow() {
-            window.location.href = "tel:09591828835";
-        }
-    </script>
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/919591828835" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<footer>
+    © 2026 Raj Marketing Mysore – Quality Mosquito Screens
+</footer>
 
 </body>
 </html>
